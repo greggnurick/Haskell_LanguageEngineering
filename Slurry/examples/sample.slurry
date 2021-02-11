@@ -1,0 +1,7 @@
+{% if order.items %}You have ordered the following items:
+{% assign i = 0 %}{% for item in order.items %}{% assign i = i+1 %}
+  {{i}}. {{item.name}}{% if 2 <= item.count %} (quantity {{item.count}}){% endif %}
+{% endfor %}
+Thank you for shopping with us, {{order.client}}!
+{% else %}You haven't ordered anything yet!
+{% endif %}
